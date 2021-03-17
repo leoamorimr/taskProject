@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+    container_name: task
+    image: postgres:9.6
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgresql:/var/lib/postgresql
+      - postgresql_data:/var/lib/postgresql/data
+volumes:
+  postgresql:
+  postgresql_data:
